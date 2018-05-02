@@ -8,6 +8,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "react": "16.3.1",
     "react-native": "0.55.3"
   },
@@ -35,7 +36,10 @@
       "jest": true,
       "node": true
     },
-    "extends": ["equimper", "prettier"]
+    "extends": [
+      "equimper",
+      "prettier"
+    ]
   },
   "husky": {
     "hooks": {
@@ -46,6 +50,9 @@
     "preset": "react-native"
   },
   "lint-staged": {
-    "*.js": ["prettier --single-quote --no-semi --write", "git add"]
+    "*.js": [
+      "prettier --single-quote --no-semi --write",
+      "git add"
+    ]
   }
 }

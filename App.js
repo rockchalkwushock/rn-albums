@@ -5,13 +5,18 @@
  */
 
 import React, { Component } from 'react'
-import {} from 'react-native'
+import { View } from 'react-native'
 
-import { Header } from './src'
+import { Header, List } from './src'
 
 type Props = {}
 export default class App extends Component<Props> {
   render() {
-    return <Header text="Albums!" />
+    return (
+      <View>
+        <Header text="Albums!" />
+        <List />
+      </View>
+    )
   }
 }
