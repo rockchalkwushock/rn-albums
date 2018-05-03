@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View } from 'react-native'
+import { ScrollView } from 'react-native'
 
 import { fetchAlbums } from '../../data'
 import Detail from './Detail'
@@ -15,7 +15,7 @@ class List extends Component {
   renderAlbums = () =>
     this.state.albums.map(album => <Detail album={album} key={album.title} />)
   render() {
-    return <View>{this.renderAlbums()}</View>
+    return <ScrollView>{this.renderAlbums()}</ScrollView>
   }
 }
 
