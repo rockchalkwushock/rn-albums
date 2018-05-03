@@ -1,21 +1,23 @@
 /* eslint-disable camelcase */
 
 import React from 'react'
-import { Image, Text, View } from 'react-native'
+import { Image, Linking, Text, View } from 'react-native'
 
 import { Card, Section } from '../Card'
+import { Button } from '../commons'
 
 type Props = {
   album: {
     artist: string,
     image: string,
     thumbnail_image: string,
-    title: string
+    title: string,
+    url: string
   }
 }
 
 const Detail = (props: Props) => {
-  const { artist, image, thumbnail_image, title } = props.album
+  const { artist, image, thumbnail_image, title, url } = props.album
   const { header, pic, thumb, view1, view2 } = styles.root
   return (
     <Card>
@@ -30,6 +32,9 @@ const Detail = (props: Props) => {
       </Section>
       <Section>
         <Image source={{ uri: image }} style={pic} />
+      </Section>
+      <Section>
+        <Button onPress={() => Linking.openURL(url)}>Buy Now</Button>
       </Section>
     </Card>
   )
